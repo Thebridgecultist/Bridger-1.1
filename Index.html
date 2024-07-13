@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>website-bridger-alpha beta1.1.html</title>
+<style>
+  .disabled-link {
+      color: gray;
+      pointer-events: none; /* 禁用点击 */
+      cursor: default; /* 改变鼠标指针样式 */
+  }
+</style>
+<script>
+  function disableLink(event) {
+      var link = event.target;
+      // 添加20毫秒延迟
+      setTimeout(function() {
+          link.classList.add('disabled-link'); // 添加禁用样式
+          link.removeEventListener('click', disableLink); // 移除点击事件监听器
+      }, 20);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+      var links = document.querySelectorAll('a');
+      links.forEach(function(link) {
+          link.addEventListener('click', disableLink);
+      });
+  });
+</script>
+<style>
+  a {
+      color: rgb(4, 255, 0); /* 设置链接的颜色为蓝色 */
+  }
+  a:visited {
+      color: rgb(4, 255, 0); /* 设置已访问链接的颜色为紫色 */
+  }
+  a:hover {
+      color: rgb(128, 255, 125); /* 设置鼠标悬停在链接上的颜色为绿色 */
+  }
+  a:active {
+      color: rgb(122, 255, 200); /* 设置点击时链接的颜色为红色 */
+  }
+</style>
+</head>
+<style>
+.subscribe {
+    background-color: rgb(174, 5, 5);
+    color: rgb(255, 255, 255);
+    border: none;
+    height: 36px;
+    width: 105px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: opacity 300ms;
+}
+
+.subscribe:hover{
+    opacity: 0.7;
+}
+.subscribe:active{
+  opacity: 0.5;
+}
+
+.unsubscribe {
+    display: none;
+}
+</style>
+</head>
+<body>
+
+<button id="subscribe" class="subscribe" onclick="redirectAndReplace()">SUBSCRIBE</button>
+<button id="unsubscribe" class="unsubscribe" onclick="replaceAndRedirect()">UNSUBSCRIBE</button>
+
+<style>
+.unsubscribe {
+    background-color: rgb(174, 5, 5);
+    color: rgb(255, 255, 255);
+    border: none;
+    height: 36px;
+    width: 105px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: opacity 300ms;
+}
+.unsubscribe:hover{
+    opacity: 0.7;
+}
+.unsubscribe:active{
+  opacity: 0.5;
+}
+</style>
+
+<style>
+.join {
+    border-color: rgb(4, 255, 0);
+    color: rgb(4, 255, 0);
+    border-radius: 4px;
+    height: 36px;
+    width: 70px;
+    background-color: rgb(0,0,0);
+    border-style: solid;
+    margin-right: 8px;
+    transition: background-color 0.7s, color 0.7s;
+}
+
+.join:hover {
+    background-color: rgb(4, 255, 0);
+    color: black;
+}
+
+.join:active {
+    opacity: 0.7;
+}
+
+.joined {
+    display: none;
+}
+</style>
+
+<button id="join" class="join" onclick="redirectAndReplaceJoin()">JOIN</button>
+
+<button id="joined" class="joined" onclick="replaceAndRedirectJoin()">JOINED</button>
+
+<style>
+    .joined {
+        border-color: rgb(4, 255, 0);
+        color: rgb(4, 255, 0);
+        border-radius: 4px;
+        height: 36px;
+        width: 70px;
+        background-color: black;
+        border-style: solid;
+        margin-right: 8px;
+        transition: background-color 0.7s, color 0.7s;
+    }
+    .joined:hover {
+        background-color: rgb(4, 255, 0);
+        color: black;
+}
+
+.joined:active {
+    opacity: 0.7;
+}
+</style>    
+<style>
+.tweet {
+    height: 36px;
+    width: 155px;
+    border: none;
+    background-color: rgb(0, 132, 255);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 18px;
+    transition: box-shadow 0.5s;
+}
+
+.tweet:hover {
+    box-shadow: 5px 5px 10px rgba(0, 132, 255, 0.25);
+}
+.tweet:active{
+    opacity: 0.7;
+}
+</style>
+<button class="tweet" onclick="redirectDiscord()">Developer Discord</button>
+<script>
+    function redirectDiscord(){
+        setTimeout(function(){
+            window.open("https://discord.gg/BG5q57mz", "_blank");
+        }, 400);
+    }
+    </script>
+    
+<script>
+function redirectAndReplace() {
+    var subscribeButton = document.getElementById('subscribe');
+    var unsubscribeButton = document.getElementById('unsubscribe');
+    setTimeout(function() {
+        window.open("https://www.youtube.com/@SuperSimpleDev", "_blank");
+        subscribeButton.style.display = 'none';
+        unsubscribeButton.style.display = 'inline-block';
+    }, 400);
+}
+
+function replaceAndRedirect() {
+    var subscribeButton = document.getElementById('subscribe');
+    var unsubscribeButton = document.getElementById('unsubscribe');
+    setTimeout(function() {
+        subscribeButton.style.display = 'inline-block';
+        unsubscribeButton.style.display = 'none';
+    }, 400);
+}
+
+function redirectAndReplaceJoin() {
+    var joinButton = document.getElementById('join');
+    var joinedButton = document.getElementById('joined');
+    setTimeout(function() {
+        window.open("https://discord.gg/ZQpuaBya", "_blank");
+        joinButton.style.display = 'none';
+        joinedButton.style.display = 'inline-block';
+    }, 400);
+}
+
+function replaceAndRedirectJoin() {
+    var joinButton = document.getElementById('join');
+    var joinedButton = document.getElementById('joined');
+    setTimeout(function() {
+        window.open("https://discord.gg/ZQpuaBya", "_blank");
+        joinButton.style.display = 'inline-block';
+        joinedButton.style.display = 'none';
+    }, 400);
+}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="color-scheme" content="dark">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <body style="color: rgb(4, 255, 0);"></body>
+</head>
+<style>
+  p{
+    font-size:large;
+  }
+</style>
+
+<body>
+  <h1>Welcome to Bridger 24w01a</h1>
+  <p>Made by Yixiang T and Roman K. Indirect version in development. This service works best using Opera, Chrome, or Firefox.</p>
+  <p>This version of Bridger is been upgraded on 5:40:00, June 3rd, 2024 By Yixiang.Tian</p>
+  <h2>Your Device</h2>
+
+  <body>
+    <h3 id="cpu-load-header">CPU Load: <span id="cpu-load">Loading...</span></h3>
+    <h3 id="fps-header">FPS: <span id="fps">Loading...</span></h3>
+    <p class='addinfo' id="additional-info" style="display: none;"><a href="https://drive.google.com/uc?id=13LMz5IHuTmrt3BvwydONHQusSWMYYIIi&export=download">Set Up Your Websocket</a></p>
+    <button class='ref' id="ref" style="display: none;">Refresh to try again</button>
+    <script>
+        const ws = new WebSocket('ws://localhost:3000'); // WebSocket服务器地址
+        let errorOccurred = false; // 用于跟踪错误是否已经发生
+
+        ws.onopen = function(event) {
+            console.log('WebSocket connected');
+        };
+  
+        ws.onmessage = function(event) {
+            clearTimeout(timer); // 清除定时器
+            const data = JSON.parse(event.data);
+            document.getElementById('cpu-load').innerText = data.cpuLoad;
+            document.getElementById('fps').innerText = data.fps;
+            // 清除样式
+            document.getElementById('cpu-load').style.color = '';
+            document.getElementById('fps').style.color = '';
+            // 清除标题样式
+            document.getElementById('cpu-load-header').style.color = '';
+            document.getElementById('fps-header').style.color = '';
+        };
+  
+        ws.onclose = function(event) {
+            console.log('WebSocket closed');
+            // 设置错误状态为 true
+            errorOccurred = true;
+        };
+  
+        ws.onerror = function(event) {
+            console.error('WebSocket error: ', event);
+            // 设置错误状态为 true
+            errorOccurred = true;
+        };
+
+        // 设置定时器，20秒后检查是否收到WebSocket信息
+        const timer = setTimeout(function() {
+            // 添加样式
+            document.getElementById('cpu-load').innerText = 'Require websocket connection';
+            document.getElementById('fps').innerText = 'Require websocket connection';
+            document.getElementById('cpu-load').style.color = 'red';
+            document.getElementById('fps').style.color = 'red';
+            // 添加标题样式
+            document.getElementById('cpu-load-header').style.color = 'red';
+            document.getElementById('fps-header').style.color = 'red';
+
+            // 如果错误状态为 true，则发送弹窗
+            if (errorOccurred) {
+                alert('CPU & FPS Error: No websocket on task (Error code 404)');
+                // 显示附加信息
+                document.getElementById('additional-info').style.display = 'block';
+                document.getElementById('ref').style.display = 'block';
+            }
+        }, 20000);
+
+        // 添加事件监听器，点击按钮时刷新页面
+        document.getElementById('ref').addEventListener('click', function(event) {
+            event.preventDefault(); // 阻止默认行为
+            location.reload(); // 刷新页面
+        });
+    </script>
+</body>
+
+<style>
+  .addinfo{
+    font-size:x-large;
+    font-family: 'Courier New', Courier, monospace;
+    color:rgb(4, 255, 0);
+    height: 15px;
+  }
+  .ref{
+    border-color: rgb(4, 255, 0);
+        color: rgb(4, 255, 0);
+        border-radius: 4px;
+        height: 36px;
+        width: 150px;
+        background-color: black;
+        border-style: solid;
+        margin-right: 8px;
+        transition: background-color 0.7s, color 0.7s; 
+  }
+</style>
+<body>
+  <h2>GPU Information</h2>
+
+  <div id="gpu-info"></div>
+
+  <script>
+    // 创建一个 WebGL 上下文
+    var canvas = document.createElement("canvas");
+    var gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+
+    if (gl) {
+      // 获取 GPU 信息
+      var gpuInfo = gl.getParameter(gl.RENDERER);
+
+      // 显示 GPU 信息
+      document.getElementById("gpu-info").innerText = "GPU: " + gpuInfo;
+    } else {
+      document.getElementById("gpu-info").innerText = "WebGL is not supported by this browser.";
+    }
+  </script>
+</body>
+<h2>Memory Usage</h2>
+
+<div id="memory-usage"></div>
+
+<script>
+  // 获取内存使用情况并显示在页面上
+  function displayMemoryUsage() {
+    var memoryInfo = performance.memory;
+
+    // 如果浏览器不支持 performance.memory 或者 memoryInfo 为 undefined，则显示提示信息
+    if (!memoryInfo) {
+      document.getElementById("memory-usage").innerText = "Browser does not support memory information";
+      return;
+    }
+
+    // 格式化内存使用情况，并显示在页面上
+    var totalMemory = (memoryInfo.totalJSHeapSize / (1024 * 1024)).toFixed(2); // 将字节转换为兆字节
+    var usedMemory = (memoryInfo.usedJSHeapSize / (1024 * 1024)).toFixed(2);
+    var limitMemory = (memoryInfo.jsHeapSizeLimit / (1024 * 1024)).toFixed(2);
+
+    var memoryUsageText = "Total Memory: " + totalMemory + " MB<br>";
+    memoryUsageText += "Used Memory: " + usedMemory + " MB<br>";
+    memoryUsageText += "Memory Limit: " + limitMemory + " MB";
+
+    document.getElementById("memory-usage").innerHTML = memoryUsageText;
+  }
+
+  // 页面加载时获取内存使用情况
+  window.onload = function() {
+    displayMemoryUsage();
+  };
+</script>
+
+</body>
+<body>
+
+  <p>Total Memory: <span id="total-memory">Loading...</span></p>
+  <p>Used Memory: <span id="used-memory">Loading...</span></p>
+
+  <script>
+      // Function to update memory information
+      function updateMemoryInfo() {
+          // Check if performance.memory is supported
+          if (performance && performance.memory) {
+              // Get memory information
+              var memoryInfo = performance.memory;
+
+              // Display total memory
+              document.getElementById('total-memory').textContent = (memoryInfo.totalJSHeapSize / (1024 * 1024)).toFixed(2) + ' MB';
+
+              // Display used memory
+              document.getElementById('used-memory').textContent = (memoryInfo.usedJSHeapSize / (1024 * 1024)).toFixed(2) + ' MB';
+          } else {
+              // Performance memory not supported
+              document.getElementById('total-memory').textContent = 'Memory information not available';
+              document.getElementById('used-memory').textContent = 'Memory information not available';
+          }
+      }
+
+      // Call updateMemoryInfo function initially
+      updateMemoryInfo();
+
+      // Call updateMemoryInfo function every 5 seconds
+      setInterval(updateMemoryInfo, 5000);
+  </script>
+</body>
+
+
+  <body>
+    <h2>Your IPv4 & IPv6 Addresses</h2>
+    <p id="ipv4Address">IPv4 Address: Loading...</p>
+    <p id="ipv6Address">IPv6 Address: Loading...</p>
+
+    <script>
+        function getIPs(callback){
+            var ipList = {};
+            var RTCPeerConnection = window.RTCPeerConnection || window.webkitRTCPeerConnection || window.mozRTCPeerConnection;
+            var pc = new RTCPeerConnection({
+                iceServers: []
+            });
+            pc.createDataChannel('');
+
+            pc.onicecandidate = function(e) {
+                if (!e.candidate) {
+                    pc.close();
+                    callback(ipList);
+                    return;
+                }
+                var ip = /^candidate:.+ (\S+) \d+ typ/.exec(e.candidate.candidate)[1];
+                var type = ip.match(/:/) ? 'ipv6' : 'ipv4';
+                ipList[type] = ip;
+            };
+
+            pc.createOffer(function(sdp) {
+                pc.setLocalDescription(sdp);
+            }, function() {});
+
+        }
+
+        getIPs(function(ipList){
+            document.getElementById('ipv4Address').textContent = 'IPv4 Address: ' + (ipList.ipv4 || 'N/A');
+            document.getElementById('ipv6Address').textContent = 'IPv6 Address: ' + (ipList.ipv6 || 'N/A');
+        });
+    </script>
+</body>
+
+  <script>
+      // 使用 IP 地址服务获取设备的 IP 地址
+      fetch('https://api.ipify.org?format=json')
+          .then(response => response.json())
+          .then(data => {
+              const ipAddress = data.ip;
+              document.getElementById('ipAddress').textContent = `Your IP Address: ${ipAddress}`;
+          })
+          .catch(error => {
+              console.error('Error fetching IP address:', error);
+              document.getElementById('ipAddress').textContent = 'Failed to fetch IP address';
+          });
+  </script>
+  <h2 id="ipAddress">Loading...</h2>  
+  <h2>Your Internet IP Address</h2>
+
+  <div id="ip-address"></div>
+
+  <script>
+    // 使用 JSONP 获取用户的公网 IP 地址
+    function getInternetIP(callback) {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://api.ipify.org?format=jsonp&callback=getIP";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    }
+
+    // 回调函数，用于处理获取到的 IP 地址
+    function getIP(response) {
+      document.getElementById("ip-address").innerText = "Your Internet IP Address: " + response.ip;
+    }
+
+    // 页面加载时获取 IP 地址
+    window.onload = function() {
+      getInternetIP();
+    };
+  </script>
+</body>
+  <h3>Your Coords</h3>
+  <p>Lat, Long:</p>
+  <style>
+    .getCoords{
+        border-color: rgb(4, 255, 0);
+        color: rgb(4, 255, 0);
+        border-radius: 4px;
+        height: 36px;
+        width: 105px;
+        background-color: black;
+        border-style: solid;
+        margin-right: 8px;
+        transition: background-color 0.7s, color 0.7s;
+    }
+    .getCoords:hover {
+        background-color: rgb(4, 255, 0);
+        color: black;
+}
+
+.getCoords:active {
+    opacity: 0.7;
+    }
+
+.disCoords{
+    display: none;
+    border-color: rgb(4, 255, 0);
+    color: rgb(4, 255, 0);
+    border-radius: 4px;
+    height: 36px;
+    width: 105px;
+    background-color: black;
+    border-style: solid;
+    margin-right: 8px;
+    transition: background-color 0.7s, color 0.7s;
+}
+.disCoords:hover{
+    background-color: rgb(4, 255, 0);
+    color: black;
+    }
+.disCoords:active{
+    opacity: 0.7;
+}
+  </style>
+<button class="getCoords" onclick="getLocation()">Reveal Coords</button>
+
+<button class="disCoords" onclick="refreshPage()" style="display: none;">Disable Coords</button>
+<p id="demo"></p>
+<script>
+  const x = document.getElementById("demo");
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+      setTimeout(function() {
+        document.querySelector(".disCoords").style.display = "inline-block";
+        document.querySelector(".getCoords").style.display = "none";
+      }, 4000)
+    }else { 
+        x.innerHTML = "This device or browser may not fully support bridger";
+    }
+  }
+
+  
+  function showPosition(position) {
+    x.innerHTML = "Lat: " + position.coords.latitude + "<br>Long: " + position.coords.longitude;
+  }
+  
+  function refreshPage() {
+    location.reload();
+  }     
+</script>
+
+
+  <p>Timezone:</p>
+  <p id="timezone"></p>
+  <script>
+    document.getElementById("timezone").innerHTML = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  </script>
+
+  <p>Time: <time id="current-time" datetime=""></time></p>
+  <script>
+    // Update time immediately and then every second
+    updateTime();
+    setInterval(updateTime, 1000);
+
+    function updateTime() {
+      var now = new Date();
+      var formattedTime = now.toLocaleTimeString();
+      document.getElementById("current-time").textContent = formattedTime;
+      document.getElementById("current-time").setAttribute("datetime", now.toISOString());
+    }
+  </script>
+
+  <p>Date: <time id="current-date" datetime=""></time></p>
+  <script>
+    document.getElementById("current-date").textContent = new Date().toLocaleDateString();
+  </script>
+
+  <!-- Additional technical info finders -->
+  <h2>Additional Technical Information:</h2>
+  <p>Browser User Agent:</p>
+  <p id="user-agent"></p>
+  <script>
+    document.getElementById("user-agent").textContent = navigator.userAgent;
+  </script>
+
+<body>
+  <h3>Screen Resolution</h3>
+  <p>The screen resolution of your device is: <span id="screen-resolution"></span></p>
+
+  <script>
+      // 获取屏幕分辨率
+      var screenWidth = window.screen.width;
+      var screenHeight = window.screen.height;
+
+      // 在页面上显示屏幕分辨率
+      var screenResolution = screenWidth + "x" + screenHeight;
+      document.getElementById("screen-resolution").textContent = screenResolution;
+  </script>
+</body>
+<body>
+  <h3>System Information</h3>
+  <p>The operating system is: <span id="os-info"></span></p>
+
+  <script>
+      // 获取操作系统信息
+      var osInfo = getOSInfo();
+
+      // 在页面上显示操作系统信息
+      document.getElementById("os-info").textContent = osInfo;
+
+      // 函数来获取操作系统信息
+      function getOSInfo() {
+          // 判断用户代理字符串以确定操作系统
+          var userAgent = navigator.userAgent;
+          var os;
+
+          if (userAgent.indexOf("Win") != -1) {
+              os = "Windows";
+          } else if (userAgent.indexOf("Mac") != -1) {
+              os = "Macintosh";
+          } else if (userAgent.indexOf("Linux") != -1) {
+              os = "Linux";
+          } else if (userAgent.indexOf("Android") != -1) {
+              os = "Android";
+          } else if (userAgent.indexOf("iOS") != -1) {
+              os = "iOS";
+          } else {
+              os = "Unknown";
+          }
+
+          return os;
+      }
+  </script>
+</body>
+<body>
+  <h3>Browser Language</h3>
+  <p>The browser's language is: <span id="browser-language"></span></p>
+
+  <script>
+      // 获取浏览器的语言设置
+      var browserLanguage = navigator.language;
+
+      // 在页面上显示浏览器的语言设置
+      document.getElementById("browser-language").textContent = browserLanguage;
+  </script>
+</body>
+<p>Browser Plugins:</p>
+<p id="browser-plugins"></p>
+<script>
+  var plugins = '';
+  for (var i = 0; i < navigator.plugins.length; i++) {
+    plugins += navigator.plugins[i].name + ', ';
+  }
+  document.getElementById("browser-plugins").textContent = plugins || 'No Plugins Detected';
+</script>
+<p>Referring URL:</p>
+<p id="referring-url"></p>
+<script>
+  var referringURL = document.referrer || 'Direct Visit';
+  document.getElementById("referring-url").textContent = referringURL;
+</script>
+<body>
+<h1>Cookie Infos</h1>
+
+<body>
+  <h2>Cookie Status</h2>
+  <p>Cookies are <span id="cookie-status">...</span></p>
+  <h3>Active Cookies</h3>
+  <ul id="active-cookies">
+      <!-- 这里将动态生成cookie列表 -->
+  </ul>
+
+  <script>
+      // 检查浏览器中的Cookie是否启用
+      var cookieEnabled = navigator.cookieEnabled;
+
+      // 更新Cookie状态
+      document.getElementById("cookie-status").textContent = cookieEnabled ? "enabled" : "disabled";
+
+      // 更新活动Cookie列表
+      function updateActiveCookies() {
+          var activeCookiesList = document.getElementById("active-cookies");
+          activeCookiesList.innerHTML = ""; // 清空现有列表
+
+          // 获取当前页面的所有cookie并添加到列表中
+          var cookies = document.cookie.split("; ");
+          
+          // 如果没有活动的cookie，则显示相应提示
+          if (cookies.length === 1 && cookies[0] === "") {
+              var noCookieItem = document.createElement("li");
+              noCookieItem.textContent = "No Active Cookie";
+              activeCookiesList.appendChild(noCookieItem);
+          } else {
+              cookies.forEach(function(cookie) {
+                  var cookieParts = cookie.split("=");
+
+                  // 确保cookie格式正确，否则忽略该cookie
+                  if (cookieParts.length === 2) {
+                      var name = decodeURIComponent(cookieParts[0].trim());
+                      var value = decodeURIComponent(cookieParts[1].trim()); // 解码cookie值
+                      var listItem = document.createElement("li");
+                      listItem.textContent = name + ": " + value;
+                      activeCookiesList.appendChild(listItem);
+                  }
+              });
+          }
+      }
+
+      // 初始化时更新一次活动Cookie列表
+      updateActiveCookies();
+
+      // 每分钟更新一次活动Cookie列表
+      setInterval(updateActiveCookies, 60000); // 60000毫秒 = 1分钟
+  </script>
+</body>
+
+
+<body>
+  <h2>Local Storage Availability Test</h2>
+
+  <div id="support"></div>
+  <div id="privacy"></div>
+  <div id="quota"></div>
+
+  <script>
+    // 检测浏览器是否支持本地存储
+    var localStorageSupport = typeof(Storage) !== "undefined";
+    document.getElementById("support").innerText = "Local Storage Support: " + (localStorageSupport ? "Yes" : "No");
+
+    // 检测是否处于隐私模式
+    var isPrivateMode = false;
+    try {
+      localStorage.setItem("test", "test");
+      localStorage.removeItem("test");
+    } catch (error) {
+      isPrivateMode = true;
+    }
+    document.getElementById("privacy").innerText = "Private Mode: " + (isPrivateMode ? "Yes" : "No");
+
+    // 获取本地存储的剩余空间
+    var remainingQuota = localStorageSupport ? (5 * 1024 * 1024 - unescape(encodeURIComponent(JSON.stringify(localStorage))).length) : 0;
+
+    // 将剩余空间以 KB、MB 和 GB 的形式表示
+    var remainingKB = remainingQuota / 1024;
+    var remainingMB = remainingKB / 1024;
+    var remainingGB = remainingMB / 1024;
+
+    document.getElementById("quota").innerHTML = "Remaining Quota: " +
+      remainingQuota + " bytes (" +
+      remainingKB.toFixed(2) + " KB / " +
+      remainingMB.toFixed(2) + " MB / " +
+      remainingGB.toFixed(2) + " GB)";
+  </script>
+</body>
+<h2>Connection and DNS Info</h2>
+<body>
+  <div id="connectionSpeed"></div>
+  <div id="connectionTypes"></div>
+  <div id="dns"></div>
+
+  <script>
+      // 获取连接速度
+      const connectionSpeed = navigator.connection.downlink;
+      document.getElementById('connectionSpeed').innerText = `Connection Speed: ${connectionSpeed} Mbps`;
+
+      // 获取连接类型
+      const connectionType = navigator.connection.effectiveType;
+      document.getElementById('connectionTypes').innerText = `Connection Type: ${connectionTypes}`;
+
+      // 获取DNS信息
+      let dns = performance.getEntriesByType('resource')
+                      .filter(entry => entry.initiatorType === 'dns')
+                      .map(entry => entry.duration);
+      // 如果DNS信息为空，则将其显示为"N/A"
+      if (dns.length === 0) {
+          dns = 'N/A';
+      } else {
+          // 否则，显示DNS信息
+          dns = dns + ' ms';
+      }
+      document.getElementById('dns').innerText = `DNS Info: ${dns}`;
+  </script>
+  <p>Device Connection Type:</p>
+  <p id="connection-type">Loading...</p>
+<script>
+      // 检查navigator.connection是否存在，如果不存在则显示错误信息
+      if (!navigator.connection) {
+      document.getElementById("connection-type").textContent = "Browser doesn't support navigator.connection";
+    } else {
+      // 获取connectionType
+      var connectionTypeInfo;
+      switch (navigator.connection.type) {
+        case 'wifi':
+          connectionTypeInfo = 'Wi-Fi';
+          break;
+        case 'cellular':
+          connectionTypeInfo = 'Cellular';
+          break;
+        case 'ethernet':
+          connectionTypeInfo = 'Ethernet';
+          break;
+        case 'none':
+          connectionTypeInfo = 'No network';
+          break;
+        default:
+          connectionTypeInfo = 'Unknown';
+      }
+
+      // 显示connectionType
+      document.getElementById("connection-type").textContent = connectionTypeInfo;
+    }
+</script>
+</body>
+
+
+<p> Extra files (Download): </p>
+<menu>
+  <li><a href="https://drive.google.com/uc?id=1JIdxZ1o8aSqR4Mw7MFd_KlDCrbUgYsdF&export=download">Eaglecraft (Just for fun)</a></li>
+  <li><a href="https://drive.google.com/uc?id=1PDFKzDEyHiO0br87PZEqoZF8wYYoiibo&export=download">Readme (Terms and cond.)</a></li>
+  <li><a href="https://drive.google.com/uc?export=download&id=1pjwRBYs4g-WIo0hO9-3DVzIfWvFJXk-n">Python Chrome Extantion & Internet Port Scanner</a></li>
+  <li><a href="https://drive.google.com/uc?id=17wD2sACuj0gBxyxXyeOc1TXavWWZ-nsB&export=download">Device & Browser Requirements</a></li>
+</menu>
+</body>
+</html>
