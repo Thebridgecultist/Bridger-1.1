@@ -7,14 +7,14 @@
 <style>
   .disabled-link {
       color: gray;
-      pointer-events: none; /* 禁用点击 */
-      cursor: default; /* 改变鼠标指针样式 */
+      pointer-events: none; 
+      cursor: default;
   }
 </style>
 <script>
   function disableLink(event) {
       var link = event.target;
-      // 添加20毫秒延迟
+      // Ignore chinese by thehightemplar
       setTimeout(function() {
           link.classList.add('disabled-link'); // 添加禁用样式
           link.removeEventListener('click', disableLink); // 移除点击事件监听器
@@ -30,16 +30,16 @@
 </script>
 <style>
   a {
-      color: rgb(4, 255, 0); /* 设置链接的颜色为蓝色 */
+      color: rgb(4, 255, 0);
   }
   a:visited {
-      color: rgb(4, 255, 0); /* 设置已访问链接的颜色为紫色 */
+      color: rgb(4, 255, 0); 
   }
   a:hover {
-      color: rgb(128, 255, 125); /* 设置鼠标悬停在链接上的颜色为绿色 */
+      color: rgb(128, 255, 125);
   }
   a:active {
-      color: rgb(122, 255, 200); /* 设置点击时链接的颜色为红色 */
+      color: rgb(122, 255, 200);
   }
 </style>
 </head>
@@ -165,7 +165,7 @@
     opacity: 0.7;
 }
 </style>
-<button class="tweet" onclick="redirectDiscord()">Developer Discord</button>
+<button class="tweet" onclick="redirectDiscord()">Thehightemplar discord</button>
 <script>
     function redirectDiscord(){
         setTimeout(function(){
@@ -245,7 +245,7 @@ function replaceAndRedirectJoin() {
     <button class='ref' id="ref" style="display: none;">Refresh to try again</button>
     <script>
         const ws = new WebSocket('ws://localhost:3000'); // WebSocket服务器地址
-        let errorOccurred = false; // 用于跟踪错误是否已经发生
+        let errorOccurred = false;
 
         ws.onopen = function(event) {
             console.log('WebSocket connected');
@@ -457,6 +457,7 @@ function replaceAndRedirectJoin() {
           .then(data => {
               const ipAddress = data.ip;
               document.getElementById('ipAddress').textContent = `Your IP Address: ${ipAddress}`;
+              console.log(ipAddress)
           })
           .catch(error => {
               console.error('Error fetching IP address:', error);
